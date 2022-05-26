@@ -26,7 +26,14 @@ namespace ConsoleUI
             ent.WorkDone = w;
             ents.Add(ent);
             Console.Write("Do you want to enter more time:");
-            bool cont = bool.Parse(Console.ReadLine());
+
+            string answer = Console.ReadLine();
+            bool cont = false;
+            if (answer.ToLower() == "yes")
+            {
+                cont = true;
+            }
+
             do
             {
                 Console.Write("Enter what you did: ");

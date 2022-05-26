@@ -34,7 +34,7 @@ namespace ConsoleUI
                 cont = true;
             }
 
-            do
+            while (cont == true)
             {
                 Console.Write("Enter what you did: ");
                 w = Console.ReadLine();
@@ -45,7 +45,8 @@ namespace ConsoleUI
                 ents.Add(ent);
                 Console.Write("Do you want to enter more time:");
                 cont = bool.Parse(Console.ReadLine());
-            } while (cont == true);
+            }
+
             ttl = 0;
             for (i = 0; i < ents.Count; i++)
             {

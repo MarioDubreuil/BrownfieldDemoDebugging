@@ -14,14 +14,20 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            string w;
+            string w, rawTimeWorked;
             int i;
             double t, ttl;
             List<TimeSheetEntry> ents = new List<TimeSheetEntry>();
             Console.Write("Enter what you did: ");
             w = Console.ReadLine();
             Console.Write("How long did you do it for: ");
-            t = double.Parse(Console.ReadLine());
+            rawTimeWorked = Console.ReadLine();
+            while (!double.TryParse(rawTimeWorked, out t))
+            {
+                Console.WriteLine("Invalid number");
+                Console.Write("How long did you do it for: ");
+                rawTimeWorked = Console.ReadLine();
+            }
             TimeSheetEntry ent = new TimeSheetEntry();
             ent.HoursWorked = t;
             ent.WorkDone = w;
@@ -40,7 +46,13 @@ namespace ConsoleUI
                 Console.Write("Enter what you did: ");
                 w = Console.ReadLine();
                 Console.Write("How long did you do it for: ");
-                t = double.Parse(Console.ReadLine());
+                rawTimeWorked = Console.ReadLine();
+                while (!double.TryParse(rawTimeWorked, out t))
+                {
+                    Console.WriteLine("Invalid number");
+                    Console.Write("How long did you do it for: ");
+                    rawTimeWorked = Console.ReadLine();
+                }
                 ent = new TimeSheetEntry();
                 ent.HoursWorked = t;
                 ent.WorkDone = w;

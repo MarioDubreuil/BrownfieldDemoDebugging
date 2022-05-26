@@ -25,8 +25,8 @@ namespace ConsoleUI
             ent.HoursWorked = t;
             ent.WorkDone = w;
             ents.Add(ent);
-            Console.Write("Do you want to enter more time:");
 
+            Console.Write("Do you want to enter more time:");
             string answer = Console.ReadLine();
             bool cont = false;
             if (answer.ToLower() == "yes")
@@ -43,8 +43,14 @@ namespace ConsoleUI
                 ent.HoursWorked = t;
                 ent.WorkDone = w;
                 ents.Add(ent);
+
                 Console.Write("Do you want to enter more time:");
-                cont = bool.Parse(Console.ReadLine());
+                answer = Console.ReadLine();
+                cont = false;
+                if (answer.ToLower() == "yes")
+                {
+                    cont = true;
+                }
             }
 
             ttl = 0;

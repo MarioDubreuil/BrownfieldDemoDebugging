@@ -40,6 +40,7 @@ namespace ConsoleUI
                 w = Console.ReadLine();
                 Console.Write("How long did you do it for: ");
                 t = int.Parse(Console.ReadLine());
+                ent = new TimeSheetEntry();
                 ent.HoursWorked = t;
                 ent.WorkDone = w;
                 ents.Add(ent);

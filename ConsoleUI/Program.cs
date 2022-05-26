@@ -15,12 +15,13 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             string w;
-            int i, t, ttl;
+            int i;
+            double t, ttl;
             List<TimeSheetEntry> ents = new List<TimeSheetEntry>();
             Console.Write("Enter what you did: ");
             w = Console.ReadLine();
             Console.Write("How long did you do it for: ");
-            t = int.Parse(Console.ReadLine());
+            t = double.Parse(Console.ReadLine());
             TimeSheetEntry ent = new TimeSheetEntry();
             ent.HoursWorked = t;
             ent.WorkDone = w;
@@ -39,7 +40,7 @@ namespace ConsoleUI
                 Console.Write("Enter what you did: ");
                 w = Console.ReadLine();
                 Console.Write("How long did you do it for: ");
-                t = int.Parse(Console.ReadLine());
+                t = double.Parse(Console.ReadLine());
                 ent = new TimeSheetEntry();
                 ent.HoursWorked = t;
                 ent.WorkDone = w;
@@ -99,6 +100,6 @@ namespace ConsoleUI
     public class TimeSheetEntry
     {
         public string WorkDone;
-        public int HoursWorked;
+        public double HoursWorked;
     }
 }

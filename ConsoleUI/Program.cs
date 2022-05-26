@@ -58,7 +58,7 @@ namespace ConsoleUI
             {
                 if (ents[i].WorkDone.Contains("Acme"))
                 {
-                    ttl += i;
+                    ttl += ents[i].HoursWorked;
                 }
             }
             Console.WriteLine("Simulating Sending email to Acme");

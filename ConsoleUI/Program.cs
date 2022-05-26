@@ -70,7 +70,7 @@ namespace ConsoleUI
             ttl = 0;
             for (i = 0; i < ents.Count; i++)
             {
-                if (ents[i].WorkDone.Contains("Acme"))
+                if (ents[i].WorkDone.ToLower().Contains("acme"))
                 {
                     ttl += ents[i].HoursWorked;
                 }
@@ -81,7 +81,7 @@ namespace ConsoleUI
             ttl = 0;
             for (i = 0; i < ents.Count; i++)
             {
-                if (ents[i].WorkDone.Contains("ABC"))
+                if (ents[i].WorkDone.ToLower().Contains("abc"))
                 {
                     ttl += ents[i].HoursWorked;
                 }

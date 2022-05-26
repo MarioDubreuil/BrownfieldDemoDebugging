@@ -63,15 +63,18 @@ namespace ConsoleUI
             }
             Console.WriteLine("Simulating Sending email to Acme");
             Console.WriteLine("Your bill is $" + ttl * 150 + " for the hours worked.");
+
+            ttl = 0;
             for (i = 0; i < ents.Count; i++)
             {
                 if (ents[i].WorkDone.Contains("ABC"))
                 {
-                    ttl += i;
+                    ttl += ents[i].HoursWorked;
                 }
             }
             Console.WriteLine("Simulating Sending email to ABC");
             Console.WriteLine("Your bill is $" + ttl * 125 + " for the hours worked.");
+
             for (i = 0; i < ents.Count; i++)
             {
                 ttl += ents[i].HoursWorked;
